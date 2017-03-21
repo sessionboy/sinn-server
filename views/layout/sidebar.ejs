@@ -1,0 +1,15 @@
+
+<div class="sidebar">
+  <div class="menu-box">
+    <% for(var i=0; i<menu.length; i++) {%>
+     <a href='<%= menu[i].route %>' 
+      <% if (index==i+1) { %> 
+      class="blue"
+      <% } %>
+     > 
+      <%= menu[i].label %>
+     </a>
+    <% } %>
+
+  </div>
+</div>

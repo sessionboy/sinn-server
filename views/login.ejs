@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/styles/style.css' />
+  </head>
+  <body>
+   <div class="mini-box">
+    <form class="signform" method="post" action="/server/login">
+     <div class="sign-title">Sinn <span> 小客栈 </span> 后台</h2></div>
+     <div class="list">
+       <label>Your Username 用户名 </label>
+       <input type="text" name="name" class="item">
+     </div>
+     <div class="list">
+       <label>And Your Password 密码</label>
+       <input type="password" name="password" class="item">
+     </div>
+     <button type="submit" class="sign-btn">登录</button>
+     <div class="sign-redirct">
+      <div class="sign-tip">前台地址:<a href="http://sinn.boyagirl.com" target="_blank">http://sinn.boyagirl.com</a></div>
+     </div>
+    </form>
+   </div>
+  <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="/js/sign.js"></script>
+  </body>
+</html>

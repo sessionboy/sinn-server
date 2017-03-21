@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/styles/style.css' />
+    <link rel='stylesheet' href='/styles/common.css' />
+    <link rel='stylesheet' href='/styles/pagination.min.css' />
+  </head>
+  <body>
+   <div class="mask hidden"></div>
+   <%- include("./layout/header.ejs") %>
+   <%- include("./layout/sidebar.ejs") %>
+   <%- include(path) %>
+   <%- include("./layout/footer.ejs") %>
+  
+   <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+   <script type="text/javascript" src="/js/pagination.min.js"></script>
+   <script type="text/javascript" src="/js/master.js"></script>
+   <script>
+    $('.pagination').pagination({
+      row: 6,
+      total: "<%= count %>"?"<%= count %>":0,
+      current: "<%= current %>"?"<%= current %>":1,
+      onJump: function(page){
+        window.location.href='/server/category?type=category'
+               +'&model='+"<%= model %>"
+               +'&item='+"<%= index %>"+'&page='+page;
+      }
+    }); 
+   </script>
+  </body>
+</html>

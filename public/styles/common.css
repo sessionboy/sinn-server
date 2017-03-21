@@ -1,0 +1,64 @@
+/*
+* 按钮
+*/
+.btn {
+  width:100px;
+  height:35px;
+  line-height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px;
+  font-size: 15px;
+}
+
+/*
+* 颜色
+*/
+.green {
+  background: #5BC98A;
+  color: #fff;
+}
+.green:hover {
+  background: #98e2b8!important;
+}
+.blue {
+  color:#00B7FF!important;
+}
+.red {
+  background: #FF4081;
+  color: #fff;
+}
+.red:hover {
+  background: #FF6E9F!important;
+}
+
+
+
+/*
+* 布局
+*/
+.pagination {
+  margin:20px 0px;
+}
+.mask {
+  width:100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  background: #333;
+  filter: alpha(opacity=50);
+  -moz-opacity:0.5;  
+  -khtml-opacity: 0.5;  
+  opacity:0.5;
+}
+.hidden {
+  display: none!important;
+}
+
+
+

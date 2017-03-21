@@ -1,0 +1,74 @@
+<script>
+  function edTcate(element){
+   var _id = element.getAttribute('cate_id');
+   var val = element.getAttribute('val');
+   $('#tcateeditor').removeClass('hidden');
+   $('.mask').removeClass('hidden');
+   $('#editortcate').val(val);
+   $('#tcate_id').val(_id);
+  }
+</script>
+
+<div class="container cate"> 
+  <div class="top">
+    <button class="btn green" id="tcate" onclick="showform('#tcateform')">添加分类</button>
+  </div>
+  <div class="tabel">
+   <table class="cate-table">
+    <thead class="list-head">
+   	 <tr>
+   	 <th>序号</th>	
+   	 <th>分类名称</th>
+   	 <th>更新时间</th>
+     <th>操作</th>
+   	 </tr>
+     </thead>
+     <tbody class="list-body">
+      <% for(var i=0; i<data.length; i++) { %>
+       <tr>
+        <td><%= i+1 %></td>  
+        <td> <%= data[i].tcate_name %> </td>  
+        <td> <%= moment(data[i].createdAt).format('YYYY-MM-DD HH:mm') %> </td>
+        <td>
+         <a onclick="edTcate(this)" cate_id=<%= data[i]._id %> val=<%= data[i].tcate_name %> >编辑</a>
+         <a href="/server/article/delete_cate/<%= data[i]._id %>?model=<%= model %>&type=<%= type %>">删除</a>
+        </td>  
+       </tr>
+      <% } %>
+    </tbody>
+   </table>
+  </div>
+  <form action="/server/article/create_tcate" id="tcateform" method="post" class="cateform hidden">
+   <div class="form-box">
+    <div class="title">
+     <h3>创建分类</h3>
+    </div>
+    <div class="list">
+       <label>First Category 一级分类 </label>
+       <input type="text" name="tcate_name" class="item" required="required">
+    </div>
+    <div class="option">
+     <button type="submit" class="btn green" style="width:80px;height:30px;line-height:30px;">确定</button>
+     <a class="btn" id="canceltcate" onclick="hiddenform('#tcateform')">取消</a>
+    </div>
+   </div>
+  </form>
+  <form action="/server/article/put_tcate" id="tcateeditor" method="post" class="cateform hidden">
+   <div class="form-box">
+    <div class="title">
+     <h3>编辑分类</h3>
+    </div>
+    <div class="list">
+       <label>First Category 一级分类 </label>
+       <input type="text" name="tcate_name" class="item" id="editortcate" required="required">
+       <input type="text" name="id" class="item hidden" id="tcate_id">
+    </div>
+    <div class="option">
+     <button type="submit" class="btn red" style="width:80px;height:30px;line-height:30px;">修改</button>
+     <a class="btn cancel" onclick="hiddenform('#tcateeditor')">取消</a>
+    </div>
+   </div>
+  </form>
+</div>
+
+

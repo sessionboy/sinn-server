@@ -1,0 +1,28 @@
+<div class="container user">
+  <div class="top">
+    <button class="btn green" id="create_user_show" onclick="showform('#create_user')"><b>+</b>添加管理员</button>
+   </div>
+  <form action="/server/user/create_user" id="create_user" method="post" class="cateform createform hidden">
+   <div class="form-box">
+    <div class="title">
+     <h3>创建管理员账号</h3>
+    </div>
+    <div class="list">
+       <label> Your name 用户名 </label>
+       <input type="text" name="name" class="item" required="required">
+    </div>
+    <div class="list">
+       <label> Your nickname 昵称 </label>
+       <input type="text" name="nickname" class="item" required="required">
+    </div>
+    <div class="list">
+       <label>Your password 密码 </label>
+       <input type="password" name="password" class="item" required="required">
+    </div>
+    <div class="option">
+     <button type="submit" class="btn green" style="width:80px;height:30px;line-height:30px;">确定</button>
+     <a class="btn" id="canceltcate" onclick="hiddenform('#create_user')">取消</a>
+    </div>
+   </div>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/styles/style.css' />
+    <link rel='stylesheet' href='/styles/common.css' />
+  </head>
+  <body>
+   <div class="mask hidden"></div>
+   <%- include("./layout/header.ejs") %>
+   <%- include("./layout/sidebar.ejs") %>
+   <%- include("./users/container.ejs") %>
+    <%- include("./common/tips.ejs") %>
+   <%- include("./layout/footer.ejs") %>
+
+   <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+   <script type="text/javascript" src="/js/master.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+const Koa = require('koa');
+const app = new Koa();
+
+// response
+app.use(async (ctx, next) => {
+  ctx.body = 'Hello Koa in app.js';
+});
+
+app.listen(3000);
+
+module.exports = app;

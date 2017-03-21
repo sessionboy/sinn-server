@@ -1,0 +1,297 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+html,body{
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	width:100%;
+	height:100%;
+}
+a {
+   text-decoration: none;
+   color: #00B7FF;
+}
+li {
+  list-style: none;
+}
+.nav-box {
+  width:100%;
+  height:60px;
+  background: #2196F3;
+  position: relative;
+}
+.nav-box .nav-left {
+  float: left;
+  width:200px;
+  height:100%;
+  text-align: center;
+  line-height: 60px;
+  color:#fff;
+  font-size: 18px;
+}
+.nav-box .nav-left span {
+  color:#f66;
+}
+.nav-box .nav-content a {
+  width:90px;
+  float: left;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+}
+
+.nav-box .nav-right {
+  float: right;
+  height:100%;
+  padding-right:20px;
+}
+.nav-box .nav-right a {
+  float: left;
+  line-height: 60px;
+  color:#fff;
+  padding:0px 20px;
+}
+
+/*
+* 侧边栏
+*/
+.sidebar {
+ width:200px;
+ position: relative;
+ left: 0px;
+ top:0px;
+ background: #f9f9f9;
+ height:100%;
+ float: left;
+}
+.sidebar .menu-box {
+  width:90%;
+  height:100%;
+  margin:0px auto;
+  padding-top: 20px;
+}
+.sidebar .menu-box a {
+  width:100%;
+  color:#999;
+  padding:20px 0px;
+  text-align: center;
+  display: block;
+}
+
+.tips {
+  width:100%;
+  padding-top: 120px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color:#5BC98A;
+}
+
+/*
+* 内容区
+*/
+.container {
+  float:left;
+  padding:30px;
+  margin-bottom: 100px;
+}
+.container .main-box {
+  height: 100%;
+  border: 1px solid #999;
+}
+.cate-table {
+  padding:10px 0px;
+}
+.cate-table .list-head {
+  /*background: #eee;*/
+  border:1px solid #999;
+}
+.cate-table .list-head tr th{
+  background: #eee;
+  font-size: 14px;
+  margin:10px;
+  padding:10px;
+}
+.cate-table .list-body tr td{
+ text-align: center;
+ padding:10px;
+ font-size: 12px;
+ color:#555;
+ border-bottom: 1px solid #eee;
+}
+
+#tcateform,#acateform,#tcateeditor,#acateeditor,.createform{
+  width:360px;
+  min-height:190px;
+  position: fixed;
+  top:50%;
+  left:50%;
+  z-index: 999;
+  background: #fff;
+  margin-left: -180px;
+  margin-top: -200px;
+  border:2px solid #eee;
+}
+
+.cateform .form-box{
+  width:100%;
+  height:100%;
+  min-height: 190px;
+  position: relative;
+}
+.cateform .form-box .title{
+  width:100%;
+  height:30px;
+  margin:0px auto;
+  line-height: 30px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  background: #2196F3;
+}
+.cateform .form-box .title h3{
+  padding-left: 12px;
+  color:#fff;
+}
+.cateform .form-box .list{
+  width:85%;
+  margin:20px auto;
+  color:#999;
+  font-size: 14px;
+  padding-top: 6px;
+}
+.cateform .form-box .list label {
+  width:100%;
+  padding-top: 12px;
+  margin:12px 0px;
+}
+.cateform .form-box .list input {
+  width:100%;
+  height:25px;
+  margin:6px auto;
+  display: block;
+  outline: none;
+  border:none;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+.cateform .form-box .list select {
+  width:80px;
+  height:25px;
+  background: #fff;
+  outline: none;
+  border: 1px solid #eee;
+}
+.cateform .form-box .list textarea {
+  width:100%;
+  height:60px;
+  display: block;
+  margin:10px auto;
+  background: #fff;
+  outline: none;
+  text-indent: 12px;
+  padding:5px;
+  border: 1px solid #eee;
+}
+.cateform .form-box .option {
+  width:80%;
+  margin:10px auto;
+  text-align: center;
+  bottom: 0px;
+}
+.cateform .form-box .option *{
+  margin:5px;
+}
+
+
+.mini-box {
+  width:100%;
+  height:100%;
+}
+.mini-box .signform {
+   width:280px;
+   height:auto;
+   min-height: 300px;
+   margin:100px auto;
+}
+.mini-box .signform .list {
+	width:100%;
+	position: relative;
+	margin:20px 0px;
+}
+.mini-box .signform .list label {
+	width: 100%;
+	font-size: 13px;
+	color: #666;
+	display: block;
+	margin:10px auto;
+}
+.mini-box .signform .list input {
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    color: #000;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid #999;
+}
+.mini-box .signform .sign-title{
+   width:100%;
+   line-height: 30px;
+   text-align: center;
+   font-size: 18px;
+   color: #333;
+}
+.mini-box .signform .sign-title span {
+  color:#5BC98A;
+}
+.mini-box .signform .sign-redirct {
+  width:100%;
+  text-align: center;
+  color:#999;
+}
+.mini-box .signform .sign-redirct .sign-tip {
+  width:90%;
+  margin:20px auto;
+  text-align: center;
+}
+.focus {
+	border-bottom: 2px solid #5BC98A!important;
+}
+.sign-btn {
+  width:100%;
+  height:40px;
+  border:0;
+  color: #fff;
+  font-size: 16px;
+  cursor:pointer;
+  outline: none;
+  border-radius: 4px;
+  margin:0px auto;
+  background: #5BC98A;
+}
+.sign-btn:hover {
+  box-shadow: 1px 15px 34px -9px #000000;
+}
+
+.footer {
+  width:100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 99;
+  text-align: center;
+  border-top: 1px solid #f9f9f9;
+}
+.footer .main {
+  width:100%;
+  padding:20px;
+  font-size: 14px;
+  color:#777;
+}
+.footer .main a {
+  color:#5BC98A;
+}
+
+
+
+
