@@ -15,7 +15,7 @@ const globalConfig = config[process.env.NODE_ENV||'development'];
 class UploadController {
 
   // 图片上传到七牛云中间件
-  async qiniu (ctx,next){   
+  static async qiniu (ctx,next){   
     const { fields,files } = ctx.request.body;
  
     if(!files||!files.file){
@@ -39,7 +39,7 @@ class UploadController {
   }
   
    // 图片上传到阿里云oss中间件
-  async alioss (ctx,next){   
+  static async alioss (ctx,next){   
     const { fields,files } = ctx.request.body;
     if(!files||!files.file){
       return ctx.error({ msg: '上传失败!' });
@@ -67,4 +67,4 @@ class UploadController {
 
 }
 
-export default new UploadController();
+export default UploadController;

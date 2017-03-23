@@ -13,7 +13,7 @@ const ArticleModel = mongoose.model('Article');
 class IndexController {
   
   // 首页数据加载
-  async query(ctx){
+  static async query(ctx){
 
    const newdate = moment().format('YYYY-MM-DD HH:mm'); // 当前时间
    const weekdate = moment().subtract(7,'days').format('YYYY-MM-DD HH:mm'); // 7天前
@@ -56,4 +56,4 @@ class IndexController {
   
 }
 
-export default new IndexController();
+export default IndexController;

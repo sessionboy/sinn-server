@@ -15,7 +15,7 @@ const TopCategoryModel = mongoose.model('TopCategory');
 class BackendUser {
   
   // 添加管理员
-  async create_user(ctx){
+  static async create_user(ctx){
    const { name, nickname, password } = ctx.request.body;
    console.log(ctx.request.body);
    if(!name||!password) return ctx.render('error',{
@@ -32,7 +32,7 @@ class BackendUser {
   }
 
   // 后台用户登录
-  async signIn(ctx) {
+  static async signIn(ctx) {
     const { name, password } = ctx.request.body;
     console.log(ctx.request.body);
     if(!name||!password) return ctx.render('error',{
@@ -52,13 +52,11 @@ class BackendUser {
   }
 
   // 后台用户退出
-  async signOut(ctx) {
+  static async signOut(ctx) {
     ctx.session.user = null;
     return ctx.render('login', { title: 'SInn管理平台'});
   }
 
-  
-
 }
 
-export default new BackendUser();
+export default BackendUser;

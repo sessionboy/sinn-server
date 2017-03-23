@@ -15,13 +15,16 @@ const CommentModel = mongoose.model('Comment');
 class ArticleController {
  
   // 发表文章 
-  async create(ctx) {
+  static async create(ctx) {
     const user = ctx.session.user;
     if(!user) return ctx.error({ msg: '你还没有登录哦!' });
     
     const { name, _id } = user;
     const data = ctx.request.body;
+    
     if(!data) return ctx.error({ msg: '发送数据失败!' });
+    const isexit = await ArticleModel.findOne({ title:data.title });
+    if(isexit) return ctx.error({ msg: '该标题已存在!' });
 
     data.author = _id;
     data.praise = { user:[],num:0};
@@ -32,14 +35,14 @@ class ArticleController {
   }
 
   // 上传文章封面图
-  async create_upload(ctx) {
+  static async create_upload(ctx) {
    const { url,id } = ctx.upload; 
    if(!url) return ctx.error({ msg:'上传失败!' });
    return ctx.success({ msg:'上传成功!',data: { url,id } });
   }
 
   // 发布评论
-  async create_comment(ctx) {
+  static async create_comment(ctx) {
 
     const user = ctx.session.user;
     if(!user) return ctx.error({ msg: '你还没有登录哦!' });
@@ -65,21 +68,21 @@ class ArticleController {
   }
 
   // 查询二级文章分类
-  async get_category(ctx) {
+  static async get_category(ctx) {
    const data = await CategoryModel.find();
    if(!data) return ctx.error({msg: '暂无数据'});
    return ctx.success({ data });
   }
 
   // 查询分类菜单
-  async getmenu_category(ctx) {
+  static async getmenu_category(ctx) {
    const data = await CategoryModel.find({}).populate('cate_parent');
    if(!data) return ctx.error({msg: '获取菜单失败!'});
    return ctx.success({ data });
   }
 
   // 获取文章详情、评论
-  async get_detail(ctx) {
+  static async get_detail(ctx) {
    let { id,pageSize,current } = ctx.query;
    const data = await ArticleModel
               .findById(id)
@@ -105,7 +108,7 @@ class ArticleController {
   }
  
    // 点赞文章
-  async article_praise(ctx) { 
+  static async article_praise(ctx) { 
    let num;  
    let user;
    let praise;
@@ -137,23 +140,23 @@ class ArticleController {
   }
   
    // 编辑文章
-  async article_put(ctx) {   
+  static async article_put(ctx) {   
    const { id } = ctx.request.body;
    return ctx.success({ msg:'待开发' });
   }
 
    // 删除文章
-  async del_article(ctx) {   
+  static async del_article(ctx) {   
    const { id } = ctx.query;
    return ctx.success({ msg:'待开发' });
   }
 
    // 删除评论
-  async del_comment(ctx) {   
+  static async del_comment(ctx) {   
    const { id } = ctx.query;
    return ctx.success({ msg:'待开发' });
   }
 
 }
 
-export default new ArticleController();
+export default ArticleController;

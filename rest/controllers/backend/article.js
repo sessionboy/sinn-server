@@ -14,7 +14,7 @@ const TopCategoryModel = mongoose.model('TopCategory');
 class BackendArticle {
 
   // 创建一级分类
-  async create_tcate(ctx) {
+  static async create_tcate(ctx) {
     const data = ctx.request.body;
     const tcate_name = data.tcate_name;
     if(!data||!tcate_name) return ctx.render('error',{
@@ -31,7 +31,7 @@ class BackendArticle {
   }
 
   // 创建二级分类
-  async create_acate(ctx) {
+  static async create_acate(ctx) {
     const data = ctx.request.body;
     const cate_name = data.cate_name;
     if(!data||!cate_name) return ctx.render('error',{
@@ -48,7 +48,7 @@ class BackendArticle {
   }
 
   // 编辑一级分类
-  async put_tcate(ctx){
+  static async put_tcate(ctx){
     const { id,tcate_name } = ctx.request.body;
     if(!id || !tcate_name) ctx.render('error',{
        message: '不能为空!',
@@ -59,7 +59,7 @@ class BackendArticle {
   } 
 
   // 编辑二级分类
-  async put_acate(ctx){
+  static async put_acate(ctx){
     const { cateid,cate_name,cate_info,cate_parent } = ctx.request.body;
     if(!cateid || !cate_name || !cate_info || !cate_parent) ctx.render('error',{
        message: '信息错误!',
@@ -70,7 +70,7 @@ class BackendArticle {
   } 
 
   // 删除分类
-  async delete_cate(ctx){
+  static async delete_cate(ctx){
     const { model,type } = ctx.query;
     const { id } = ctx.params;
     if(!id || !model) return ctx.render('error',{
@@ -83,4 +83,4 @@ class BackendArticle {
 
 }
 
-export default new BackendArticle();
+export default BackendArticle;

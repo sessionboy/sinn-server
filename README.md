@@ -1,5 +1,9 @@
 ## sinn-server
  [sinn-server](https://github.com/sessionboy/sinn)是[sinn](https://github.com/sessionboy/sinn)的后端实现，支持async/await，docker一键部署，Resful风格API，支持阿里云oss和七牛云存储，自带管理后台，干净无babel。
+
+ * 线上测试demo: http://servertest.boyagirl.com
+
+ * 测试账户: test  密码：123456
      
 ## 主要技术栈 
 ```

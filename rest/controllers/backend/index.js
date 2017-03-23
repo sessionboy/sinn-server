@@ -15,19 +15,19 @@ const TopCategoryModel = mongoose.model('TopCategory');
 class BackendMain {
 
   // 登录页渲染
-  async Index(ctx) {
+  static async Index(ctx) {
     return ctx.render('login', { title: 'SInn管理平台'});
   }
   
   // 首页渲染
-  async home(ctx) {
+  static async home(ctx) {
     console.log(ctx.flash);
     const user = ctx.session.user;
     return ctx.render('home', { title: 'SInn管理平台',message:'这里是首页',user });
   }
   
   // 分类管理
-  async category(ctx){
+  static async category(ctx){
 
     let Index = 1;
     let current = 1;
@@ -59,7 +59,7 @@ class BackendMain {
   }
 
   // 文章管理
-  async article(ctx){
+  static async article(ctx){
     let Index = 1;
     const { type,item } = ctx.query;
     if(item) Index =item;
@@ -74,7 +74,7 @@ class BackendMain {
   }
 
   // 用户管理
-  async user(ctx){
+  static async user(ctx){
     let Index = 1;
     const { type,item } = ctx.query;
     if(item) Index =item;
@@ -90,4 +90,4 @@ class BackendMain {
 
 }
 
-export default new BackendMain();
+export default BackendMain;

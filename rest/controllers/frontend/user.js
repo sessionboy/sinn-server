@@ -12,7 +12,7 @@ const ArticleModel = mongoose.model('Article');
 class UserController {
 
   // 用户注册
-  async register(ctx) {
+  static async register(ctx) {
     const { name, nickname, password, apassword, profile } = ctx.request.body;
     if(!name||!password) {
       return ctx.error({ msg: '用户名或密码不能为空!' });
@@ -32,7 +32,7 @@ class UserController {
   }
 
   // 用户登录
-  async login(ctx) {
+  static async login(ctx) {
       const { name, password } = ctx.request.body;
       if(!name||!password) {
         return ctx.error({ msg: '获取用户失败!' });
@@ -53,7 +53,7 @@ class UserController {
   }
 
   // 用户退出
-  async logout(ctx) {
+  static async logout(ctx) {
     const { userid } = ctx.query;
     const cookie_userid = ctx.cookies.get('userid');
     if(!userid) return ctx.error({ msg:'用户id不存在!' });
@@ -70,7 +70,7 @@ class UserController {
   }
 
   // 用户个人中心数据加载
-  async personal(ctx) {   
+  static async personal(ctx) {   
     let { id,pageSize,current } = ctx.query;
     if(!id) return ctx.error({ msg: '用户id不能为空' });
 
@@ -94,7 +94,7 @@ class UserController {
   }
 
   // 更新用户个人信息
-  async put_userinfo(ctx) {   
+  static async put_userinfo(ctx) {   
     const fields = ctx.request.body;
     if(!fields.id) return ctx.error({ msg: '用户id不存在!' });
 
@@ -113,7 +113,7 @@ class UserController {
   * 上传逻辑由中间件 /rest/middlewares/upload 统一处理
   * 此处只需处理上传的结果
   */
-  async put_avatar(ctx) {   
+  static async put_avatar(ctx) {   
    const { url,id } = ctx.upload; 
    if(!url) return ctx.error({ msg:'上传失败!' });
    const updateavatar = await UserModel.findByIdAndUpdate(id,{ avatar: url });
@@ -122,7 +122,7 @@ class UserController {
 
 }
 
-export default new UserController();
+export default UserController;
 
 
 
