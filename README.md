@@ -3,7 +3,7 @@
 
  * 线上测试demo: http://servertest.boyagirl.com
 
- * 测试账户: test  密码：123456
+ * 测试账户: sinn  密码：admin
      
 ## 主要技术栈 
 ```

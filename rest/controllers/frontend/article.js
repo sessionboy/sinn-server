@@ -76,8 +76,9 @@ class ArticleController {
 
   // 查询分类菜单
   static async getmenu_category(ctx) {
-   const data = await CategoryModel.find({}).populate('cate_parent');
-   if(!data) return ctx.error({msg: '获取菜单失败!'});
+    const acate = await CategoryModel.find().populate('cate_parent');
+   const tcate = await TopCategoryModel.find();
+   const data = { acate, tcate };
    return ctx.success({ data });
   }
 
