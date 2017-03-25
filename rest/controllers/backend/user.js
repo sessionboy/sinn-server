@@ -48,6 +48,7 @@ class BackendUser {
       message: '用户或密码错误!',
       error: { status:400 }
     })
+    ctx.session.user = result;
     ctx.redirect('/server/home');
   }
 
