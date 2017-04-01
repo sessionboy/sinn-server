@@ -4,7 +4,9 @@
  * 线上测试demo: http://servertest.boyagirl.com
 
  * 测试账户: sinn  密码：admin
-     
+ 
+ 如果觉得可以，右上角点颗星星噢~
+ 
 ## 主要技术栈 
 ```
 nodejs, koa2, mongoose, docker, es6, async/await,  Resful API
