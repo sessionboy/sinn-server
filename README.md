@@ -18,7 +18,7 @@ nodejs, koa2, mongoose, docker, es6, async/await,  Resful API
      
 * node版本7.x，推荐使用最新版本     
      
-* 使用koa2，默认支持async/await，7.x以上node版本, 不需要babel       
+* 使用koa2，默认支持async/await，7.x以上node版本      
    
 #### 二，项目配置    
    
